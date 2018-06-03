@@ -12,10 +12,10 @@ class MockConsumerRepository implements ConsumerRepository{
 var kConsumers = <Consumer>[
     new Consumer(
       nome: 'Romain Hoogmoed',
-      email:['romain.hoogmoed@example.com']
+      email:'romain.hoogmoed@example.com'
     ),
     new Consumer(
       nome: 'Emilie Olsen',
-      email:['emilie.olsen@example.com']
+      email:'emilie.olsen@example.com'
     )
 ];

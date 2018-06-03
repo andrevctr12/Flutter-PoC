@@ -9,17 +9,21 @@ class Address {
   String CEP;
 
   Address({
-    this.id,
-    this.bairro,
-    this.rua,
-    this.cidade,
-    this.estado,
-    this.CEP,
+    this.id = 0,
+    this.bairro = '',
+    this.rua = '',
+    this.cidade = '',
+    this.estado = '',
+    this.CEP = '',
   });
 
-//  Consumer.fromMap(Map<String, dynamic> map)
-//      : fullName = "${map['name']['first']} ${map['name']['last']}",
-//        phone = map['phone'];
+  Address.fromMap(Map<String, dynamic> map)
+      : id = map['endereco']['id'],
+        bairro = map['endereco']['bairro']['nome'],
+        rua = map['endereco']['rua']['nomeRua'],
+        cidade = map['endereco']['cidade']['nome'],
+        estado = map['endereco']['cidade']['uf']['nome'],
+        CEP = '${map['endereco']['cep']}';
 }
 
 abstract class AddressRepository {

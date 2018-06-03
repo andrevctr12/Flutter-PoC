@@ -10,7 +10,9 @@ class ProdConsumerRepository implements ConsumerRepository {
   @override
   Future<List<Consumer>> fetch(){
     return _netUtil.get(_kUserUrl).then((dynamic res) {
-      return res.map( (rawData) => Consumer.fromMap(rawData) ).toList();
+      final List items = res;
+      print(items.toString());
+      return items.map( (rawData) => new Consumer.fromMap(rawData) ).toList();
     });
   }
 

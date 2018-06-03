@@ -1,6 +1,7 @@
 import 'package:app_mecanica/app_drawer.dart';
 import 'package:app_mecanica/consumer_screen.dart';
-import 'package:app_mecanica/modules/consumer/consumer_view.dart';
+import 'package:app_mecanica/data/consumer/consumer_data.dart';
+import 'package:app_mecanica/modules/consumer/consumer_page.dart';
 import 'package:flutter/material.dart';
 
 import 'package:app_mecanica/app_scaffold.dart';
@@ -14,6 +15,7 @@ void main() {
 class MyApp extends StatelessWidget {
   var _routes = <String, WidgetBuilder>{
     ConsumerPage.routeName: (BuildContext context) => new ConsumerPage(),
+    ConsumerInfo.routeName: (BuildContext context) => new ConsumerInfo(consumer: new Consumer(),),
   };
   @override
   Widget build(BuildContext context) {
@@ -41,7 +43,7 @@ class _HomeScreenState extends State<HomeScreen> {
   var _scaffoldKey = new GlobalKey<ScaffoldState>();
 
   var activeScreen = consumerScreen;
-  var selectedMenuItemId = 'costumer';
+  var selectedMenuItemId = 'consumer';
 
   final Screen _falseScreen = new Screen(
     title: 'Em Implementação',

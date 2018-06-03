@@ -1,4 +1,5 @@
 import 'package:app_mecanica/consumer_screen.dart';
+import 'package:app_mecanica/modules/consumer/consumer_page.dart';
 import 'package:flutter/material.dart';
 
 import 'package:app_mecanica/modules/consumer/consumer_view.dart';
@@ -65,7 +66,7 @@ final Screen consumerScreen = new Screen(
         floatingActionButton: new FloatingActionButton(
             child: new Icon(Icons.add),
             onPressed: () {
-              Navigator.of(context).pushNamed(ConsumerPage.routeName);
+              Navigator.of(context).pushNamed(ConsumerInfo.routeName);
             }),
         body: new ConsumerList(),
       );
