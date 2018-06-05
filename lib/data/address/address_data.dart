@@ -6,15 +6,17 @@ class Address {
   String rua;
   String cidade;
   String estado;
-  String CEP;
+  String cep;
+  String siglaUf;
 
   Address({
-    this.id = 0,
+    this.id,
     this.bairro = '',
     this.rua = '',
     this.cidade = '',
     this.estado = '',
-    this.CEP = '',
+    this.cep = '',
+    this.siglaUf = '',
   });
 
   Address.fromMap(Map<String, dynamic> map)
@@ -22,8 +24,9 @@ class Address {
         bairro = map['endereco']['bairro']['nome'],
         rua = map['endereco']['rua']['nomeRua'],
         cidade = map['endereco']['cidade']['nome'],
-        estado = map['endereco']['cidade']['uf']['nome'],
-        CEP = '${map['endereco']['cep']}';
+        cep = '${map['endereco']['cep']}',
+        siglaUf = '${map['endereco']['cidade']['uf']['ufsigla']}',
+        estado = map['endereco']['cidade']['uf']['nome'];
 }
 
 abstract class AddressRepository {
